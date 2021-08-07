@@ -30,7 +30,7 @@
         </li>
 
         <li class="social-button">
-          <a href="https://twitter.com/home"><img src="/images/twitter.svg" alt="twitter"></a>
+          <a href="https://twitter.com/NavidK0"><img src="/images/twitter.svg" alt="twitter"></a>
         </li>
 
         <li class="social-button">
@@ -211,6 +211,11 @@ There really isn't that much else to say!
           window.open("https://store.steampowered.com/app/663940/Rotoscape/");
           return;
 
+        case "spacepulse":
+        case "sp":
+          term.writeln("Ah... sorry. This one is probably dead. 😔");
+          return;
+
         case "exigence":
         case "chronoflux":
           term.writeln("Sorry Kevin, but it's beyond dead.");
@@ -255,7 +260,6 @@ There really isn't that much else to say!
           return;
 
         case "navidk0":
-        case "navid kabir":
         case "navid":
         case "kabir":
           await this.typeTextLn("That's me! 😅", 0.025, 0.025);
@@ -263,7 +267,6 @@ There really isn't that much else to say!
           return;
 
         case "0kdivan":
-        case "ribak divan":
         case "divan":
         case "ribak":
           await this.typeTextLn("🤔  !em s'tahT", 0.025, 0.025);
@@ -309,7 +312,7 @@ contact: Email me.
 rotoscape: A game about rotating shapes. Very cool, definitely not biased.
 
 -- Dead Games --
-space pulse: rip.
+spacepulse: rip.
 exigence: Oof.
 chronoflux: Lol.
 
