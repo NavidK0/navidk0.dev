@@ -160,6 +160,14 @@ export default Vue.extend({
   },
 
   methods: {
+    async startTextSequence() {
+      await this.typeTextLn("Hey there, I'm Navid Kabir! ", 0.02);
+      await this.typeTextLn("I'm a software engineer who loves to compose music and work on video games.", 0.02);
+      await this.typeTextLn("Welcome to my site.", 0.02);
+
+      await this.typeTextLn('Type "help" to get started.', 0.02);
+    },
+
     async recursivelyListenForInput() {
       try {
         const input = await localEcho.read(`${ansi.style.cyan}guest@navidk0.dev${ansi.style.reset}:~# `);
@@ -200,7 +208,8 @@ There really isn't that much else to say!
         }
 
         case "clear": {
-          term.write(ansi.erase.display(3));
+          term.write(ansi.erase.display(2));
+          term.clear();
           return;
         }
 
@@ -349,13 +358,6 @@ ping: Pong!
 pong: Ping!
 `;
       term.writeln(text);
-    },
-
-    async startTextSequence() {
-      await this.typeTextLn("Hey there, I'm Navid Kabir! Welcome to my site.", 0.02);
-      await this.typeTextLn("I'm a software engineer who loves to compose music and work on video games.", 0.02);
-
-      await this.typeTextLn('Type "help" to get started.', 0.02);
     },
 
     /**
