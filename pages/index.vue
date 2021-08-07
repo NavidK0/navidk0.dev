@@ -162,7 +162,7 @@ export default Vue.extend({
   methods: {
     async startTextSequence() {
       await this.typeTextLn("Hey there, I'm Navid Kabir! ", 0.02);
-      await this.typeTextLn("I'm a software engineer who loves to compose music and work on video games.", 0.02);
+      await this.typeTextLn("I'm a software engineer who loves to compose music and work on video games.\n", 0.02);
       await this.typeTextLn("Welcome to my site.", 0.02);
 
       await this.typeTextLn('Type "help" to get started.', 0.02);
