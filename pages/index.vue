@@ -180,12 +180,13 @@ export default Vue.extend({
 
         case "about":
           term.writeln(`
-I love everything to do with programming, music, and game development.
+I love everything to do with programming, music, and game development!
 I'm currently working on video games over at Last Abyss, which has been my passion for quite some time.
-I also like to make music on the side occasionally, which stems from me playing musical instruments and being in band\nthroughout my school years.
+I believe that games are the ultimate art form since they combine so many different types of media, so I've been wanting to make my own games for as long as I can remember.
+I also like to make music on the side occasionally, which stems from playing musical instruments and being in band throughout my school years.
 
-I'm just somebody who loves to create things. I truly believe that video games are art, and they are of the best mediums\nout there since they combine so many different fields together.
 
+Overall, I'm just somebody who likes to make things.
 There really isn't that much else to say!
 `);
           return;
@@ -195,6 +196,11 @@ There really isn't that much else to say!
           copy.shift();
 
           term.writeln(copy.join(" "));
+          return;
+        }
+
+        case "clear": {
+          term.write(ansi.erase.display(3));
           return;
         }
 
@@ -313,6 +319,7 @@ There may or may not be commands that are not listed here nor documented.
 
 about: Get some extra info.
 echo [args]: ECHO!
+clear: Clears the screen.
 
 ls: Lists all the files and directories located within the current directory.
 mkdir: Create a directory.
@@ -346,7 +353,7 @@ pong: Ping!
 
     async startTextSequence() {
       await this.typeTextLn("Hey there, I'm Navid Kabir! Welcome to my site.", 0.02);
-      await this.typeTextLn("I'm a long-time software engineer and music creator. I love making stuff!\n", 0.02);
+      await this.typeTextLn("I'm a software engineer who loves to compose music and work on video games.", 0.02);
 
       await this.typeTextLn('Type "help" to get started.', 0.02);
     },
