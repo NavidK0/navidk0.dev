@@ -15,14 +15,20 @@ export default {
 
 <style>
 .main-footer {
-  position: fixed;
-  bottom: 50px;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  text-transform: full-width;
+  display: none;
+}
+
+@media (min-height: 920px) {
+  .main-footer {
+    display: block;
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+  }
 }
 </style>

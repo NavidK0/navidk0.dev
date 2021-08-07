@@ -32,9 +32,20 @@ html {
 
 .watermark {
   position: fixed;
-  bottom: -50px;
+  bottom: -35px;
   left: 15px;
-  width: 250px;
-  height: 250px;
+  width: 175px;
+  height: 175px;
 }
+
+@media (min-height: 920px) {
+  .watermark {
+    position: fixed;
+    bottom: -50px;
+    left: 15px;
+    width: 250px;
+    height: 250px;
+  }
+}
+
 </style>

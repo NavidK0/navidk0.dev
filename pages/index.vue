@@ -4,6 +4,11 @@
 
     <div id="terminal"/>
 
+    <div id="terminal-nolandscape">
+      <hr class="separator">
+      <h2>Sorry, but the Terminal can't be used in Portrait mode.</h2>
+    </div>
+
     <h6 style="margin-top: 30px; color: #003a31; font-style: oblique">
       "it's not so bad, don't be afraid of command lines" - Some Smart Dude
     </h6>
@@ -51,6 +56,7 @@
 
 <script lang="ts">
 import {Terminal} from "xterm";
+import {FitAddon} from "xterm-addon-fit";
 import {WebLinksAddon} from 'xterm-addon-web-links';
 import Vue from "vue";
 import LocalEchoController from 'local-echo';
@@ -77,6 +83,8 @@ const localEcho = new LocalEchoController(term, {
   historySize: 10,
   maxAutocompleteEntries: 100
 });
+
+const fitAddon = new FitAddon();
 
 let DISABLE_STARTUP = false;
 
@@ -116,9 +124,13 @@ export default Vue.extend({
       return;
     }
 
+    term.loadAddon(fitAddon);
     term.loadAddon(new WebLinksAddon());
 
     term.open(terminalElement);
+
+    fitAddon.fit();
+    window.addEventListener('resize', this.onResize.bind(this));
 
     term.write('login as: ');
     await this.typeTextLn('guest', 0.1);
@@ -380,6 +392,10 @@ pong: Ping!
       }
       return new Promise(resolve => setTimeout(resolve, seconds * 1000));
     },
+
+    onResize() {
+      fitAddon.fit();
+    }
   }
 });
 </script>
@@ -409,9 +425,25 @@ h1, h2, h3, h4, h5, h6, p, a {
   max-width: 890px;
 }
 
-#terminal {
-  margin: 0 auto;
-  max-width: 890px;
+@media screen and (orientation: landscape) {
+  #terminal {
+    margin: 0 auto;
+    max-width: 890px;
+  }
+
+  #terminal-nolandscape {
+    display: none;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #terminal {
+    display: none;
+  }
+
+  #terminal-nolandscape {
+    display: block;
+  }
 }
 
 a:link {
