@@ -1,11 +1,7 @@
 <template>
   <div>
     <img class="watermark" alt="avatar" src="/images/navid_avatar.gif">
-
-    <div class="flex-page">
-      <Nuxt/>
-    </div>
-
+    <Nuxt/>
     <Footer/>
   </div>
 </template>
@@ -66,7 +62,7 @@ export default Vue.extend({
 
 <style>
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 
@@ -83,12 +79,5 @@ html {
   left: 15px;
   width: 250px;
   height: 250px;
-}
-
-.flex-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 </style>

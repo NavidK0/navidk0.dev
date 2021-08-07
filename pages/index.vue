@@ -67,8 +67,6 @@ const term = new Terminal(
 
       fontSize: 18,
 
-      cols: 120,
-
       theme: {
         background: "hsl(180,57%,10%)"
       }
@@ -404,13 +402,13 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .separator {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px auto;
+  max-width: 890px;
 }
 
 #terminal {
   margin: 0 auto;
-  max-width: 920px;
+  max-width: 890px;
 }
 
 a:link {
