@@ -15,43 +15,6 @@ export default Vue.extend({
 
   components: {Footer},
 
-  head: {
-    htmlAttrs: {
-      lang: 'en'
-    },
-    title: "NavidK0's Neat Place",
-    meta: [
-      {charset: 'utf-8'},
-      {name: 'author', content: 'Navid Kabir'},
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Welcome.'
-      },
-      {
-        hid: 'keywords',
-        name: 'keywords',
-        content: 'navid kabir, developer, personal, website'
-      },
-      {
-        hid: 'robots',
-        name: 'robots',
-        content: 'index, follow'
-      },
-      {
-        name: 'language',
-        content: 'English'
-      }
-    ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        href: '/favicon.ico'
-      }
-    ]
-  },
-
   methods: {
     getCopyright() {
 
