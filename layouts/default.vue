@@ -13,13 +13,7 @@ import Footer from "~/components/Footer.vue";
 export default Vue.extend({
   name: 'Default',
 
-  components: {Footer},
-
-  methods: {
-    getCopyright() {
-
-    }
-  }
+  components: {Footer}
 });
 </script>
 

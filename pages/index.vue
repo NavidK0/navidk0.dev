@@ -274,7 +274,7 @@ There really isn't that much else to say!
         case "/nk0":
           await this.typeTextLn("You found a secret...?!?!!", 0.05, 0.05);
           await this.sleep(2);
-          window.open("https://soundcloud.com/navidk0/baws-tres/s-sLURFKXLU91");
+          window.open("https://soundcloud.com/navidk0/roto-baws-tress/s-jJReDBCJI1n");
 
           return;
 
