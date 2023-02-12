@@ -17,12 +17,6 @@
     <div>
       <ul class="social-button-list">
         <li class="social-button">
-          <a href="https://lastabyss.com">
-            <img src="/images/lastabyss.svg" alt="last abyss">
-          </a>
-        </li>
-
-        <li class="social-button">
           <a href="https://github.com/NavidK0"><img src="/images/github.svg" alt="github"></a>
         </li>
 
@@ -145,8 +139,7 @@ export default Vue.extend({
     term.writeln('Welcome to K-OS 6.1.5 LTS (K-OS/Linux 5.4.0-52-generic x86_64)');
     term.writeln('\n');
     term.writeln(' * Documentation: https://navidk0.dev');
-    term.writeln(' * Management: https://lastabyss.com');
-    term.writeln(' * Contact: navidk@lastabyss.com');
+    term.writeln(' * Contact: navid.kabir@ngon.gg');
     term.writeln(' ');
     term.writeln('Last login: ' + new Date().toLocaleString());
     term.writeln(' ');
@@ -214,7 +207,7 @@ There really isn't that much else to say!
         }
 
         case "ls":
-          term.writeln(ansi.style.blue + "memes  coffee  huginn  nf  spacepulse  chronoflux  deadgames  lastabysssecretgames extremely_top_secret_documents");
+          term.writeln(ansi.style.blue + "memes  coffee  huginn  nf  spacepulse  chronoflux  deadgames extremely_top_secret_documents");
           return;
         case "cd":
           term.writeln("Yeah... no, sorry. I wasn't actually going to program this in.\nI hope the illusion isn't completely shattered.");
@@ -227,7 +220,7 @@ There really isn't that much else to say!
 
         case "contact":
           term.writeln("Opening your mail client...");
-          window.open("mailto:navidk@lastabyss.com?subject=Contact%20-%20navidk0.dev&body=I%20got%20somethin'%20to%20say%20to%20ya!");
+          window.open("mailto:navidkabir@ngon.gg?subject=Contact%20-%20navidk0.dev&body=I%20got%20somethin'%20to%20say%20to%20ya!");
           return;
 
         case "roto roto":
@@ -248,8 +241,8 @@ There really isn't that much else to say!
           term.writeln("Sorry Kevin, but it's beyond dead.");
           return;
 
-        case "lastabyss":
-          window.open("https://lastabyss.com");
+        case "ngon":
+          window.open("https://ngon.gg");
           return;
 
         case "discord":
@@ -346,7 +339,7 @@ chronoflux: Lol.
 
 
 discord: Open up a link to the Last Abyss Discord!
-lastabyss: Get more info on Last Abyss Inc, my game dev studio!
+ngon: Get more info on N-GON Interactive!
 
 twitter: Open up my Twitter profile.
 github: Open up my GitHub profile.
