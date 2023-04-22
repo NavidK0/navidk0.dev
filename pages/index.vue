@@ -176,14 +176,11 @@ export default Vue.extend({
 
                 case "about":
                     term.writeln(`
-I love everything to do with programming, music, and game development!
-I'm currently working on video games over at Last Abyss, which has been my passion for quite some time.
-I believe that games are the ultimate art form since they combine so many different types of media, so I've been wanting to make my own games for as long as I can remember.
-I also like to make music on the side occasionally, which stems from playing musical instruments and being in band throughout my school years.
+Passionate about programming, music, and game development, I create video games, compose music, and build companies.
 
+Embracing games as the ultimate art form, I've always dreamt of crafting my own, while also enjoying making music inspired by my background in playing instruments and participating in school bands.
 
-Overall, I'm just somebody who likes to make things.
-There really isn't that much else to say!
+Simply put, I love making things!
 `);
                     return;
 
@@ -204,36 +201,42 @@ There really isn't that much else to say!
                 case "ls":
                     term.writeln(ansi.style.blue + "memes  coffee  huginn  nf  spacepulse  chronoflux  deadgames extremely_top_secret_documents");
                     return;
+
                 case "cd":
                     term.writeln("Yeah... no, sorry. I wasn't actually going to program this in.\nI hope the illusion isn't completely shattered.");
                     return;
 
                 case "mkdir":
+                    term.writeln("Beep bloop! I have made a directory somewhere in the universe!\n");
+                    return;
+
                 case "rm":
-                    term.writeln("You think you have permission for that? Hah, no.\n");
+                    term.writeln("Beep bloop! I have removed a directory from somewhere in the universe!\n");
                     return;
 
                 case "contact":
                     term.writeln("Opening your mail client...");
-                    window.open("mailto:navidkabir@ngon.gg?subject=Contact%20-%20navidk0.dev&body=I%20got%20somethin'%20to%20say%20to%20ya!");
+                    window.open("mailto:navid.kabir@ngon.gg?subject=Contact%20-%20navidk0.dev&body=I%20got%20somethin'%20to%20say%20to%20ya!");
                     return;
 
                 case "roto roto":
                 case "roto":
                 case "rotoscape":
-                    await this.typeTextLn("Hell YEAH! Proud of this one! 🚀", 0.025);
+                    await this.typeTextLn("Hell YEAH! Proud of this one! 🚀", 0.025, 0.025);
                     await this.sleep(1);
                     window.open("https://store.steampowered.com/app/663940/Rotoscape/");
                     return;
 
                 case "spacepulse":
                 case "sp":
-                    term.writeln("Ah... sorry. This one is probably dead. 😔");
+                    await this.typeTextLn("Back from the dead baby! 🚀", 0.025, 0.025);
+                    await this.sleep(1);
+                    window.open("https://ngon.gg/games/spacepulse");
                     return;
 
                 case "exigence":
                 case "chronoflux":
-                    term.writeln("Sorry Kevin, but it's beyond dead.");
+                    await this.typeTextLn("Sorry Kevin, but it's beyond dead.", 0.025, 0.025);
                     return;
 
                 case "ngon":
@@ -241,7 +244,7 @@ There really isn't that much else to say!
                     return;
 
                 case "discord":
-                    window.open("https://discord.gg/MXNDFt59gB");
+                    await this.typeTextLn("Feel free to reach out! NavidK0#0001", 0.025, 0.025);
                     return;
 
                 case "twitter":
