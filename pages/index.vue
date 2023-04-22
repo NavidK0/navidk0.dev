@@ -1,51 +1,46 @@
 <template>
-  <div style="margin-top: 60px;">
-    <h1>K-OS TERMINAL INTERFACE</h1>
+    <div style="margin-top: 60px;">
+        <h1>K-OS TERMINAL INTERFACE</h1>
 
-    <div id="terminal"/>
+        <div id="terminal"/>
 
-    <div id="terminal-nolandscape">
-      <hr class="separator">
-      <h2>Sorry, but the Terminal can't be used in Portrait mode.</h2>
+        <h6 style="margin-top: 30px; color: #003a31; font-style: oblique">
+            "it's not bad, don't be so afraid of command lines" - Vim User
+        </h6>
+
+        <hr class="separator">
+        <div>
+            <ul class="social-button-list">
+                <li class="social-button">
+                    <a href="https://github.com/NavidK0"><img src="/images/github.svg" alt="github"></a>
+                </li>
+
+                <li class="social-button">
+                    <a href="https://www.linkedin.com/in/navidk0/"><img src="/images/linkedin.svg" alt="linkedin"></a>
+                </li>
+
+                <li class="social-button">
+                    <a href="https://soundcloud.com/navidk0"><img src="/images/soundcloud.svg" alt="soundcloud"></a>
+                </li>
+
+                <li class="social-button">
+                    <a href="https://twitter.com/NavidK0"><img src="/images/twitter.svg" alt="twitter"></a>
+                </li>
+
+                <li class="social-button">
+                    <a href="https://www.youtube.com/channel/UCcdPMZe5RvjzTVzZs_zmmVQ">
+                        <img
+                                src="/images/youtube.svg"
+                                alt="youtube"
+                        ></a>
+                </li>
+
+                <li class="social-button">
+                    <a href="https://www.instagram.com/navidk0/"><img src="/images/instagram.svg" alt="instagram"></a>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <h6 style="margin-top: 30px; color: #003a31; font-style: oblique">
-      "it's not so bad, don't be afraid of command lines" - Some Smart Dude
-    </h6>
-
-    <hr class="separator">
-    <div>
-      <ul class="social-button-list">
-        <li class="social-button">
-          <a href="https://github.com/NavidK0"><img src="/images/github.svg" alt="github"></a>
-        </li>
-
-        <li class="social-button">
-          <a href="https://www.linkedin.com/in/navidk0/"><img src="/images/linkedin.svg" alt="linkedin"></a>
-        </li>
-
-        <li class="social-button">
-          <a href="https://soundcloud.com/navidk0"><img src="/images/soundcloud.svg" alt="soundcloud"></a>
-        </li>
-
-        <li class="social-button">
-          <a href="https://twitter.com/NavidK0"><img src="/images/twitter.svg" alt="twitter"></a>
-        </li>
-
-        <li class="social-button">
-          <a href="https://www.youtube.com/channel/UCcdPMZe5RvjzTVzZs_zmmVQ">
-            <img
-                src="/images/youtube.svg"
-                alt="youtube"
-            ></a>
-        </li>
-
-        <li class="social-button">
-          <a href="https://www.instagram.com/navidk0/"><img src="/images/instagram.svg" alt="instagram"></a>
-        </li>
-      </ul>
-    </div>
-  </div>
 </template>
 
 <script lang="ts">
@@ -58,24 +53,24 @@ import ansi from 'ansi-escape-sequences';
 
 const term = new Terminal(
     {
-      convertEol: true,
-      cursorStyle: "underline",
-      cursorBlink: true,
-      rendererType: "canvas",
+        convertEol: true,
+        cursorStyle: "underline",
+        cursorBlink: true,
+        rendererType: "canvas",
 
-      allowTransparency: true,
+        allowTransparency: true,
 
-      fontSize: 18,
+        fontSize: 18,
 
-      theme: {
-        background: "hsl(180,57%,10%)"
-      }
+        theme: {
+            background: "hsl(180,57%,10%)"
+        }
     }
 );
 
 const localEcho = new LocalEchoController(term, {
-  historySize: 10,
-  maxAutocompleteEntries: 100
+    historySize: 10,
+    maxAutocompleteEntries: 100
 });
 
 const fitAddon = new FitAddon();
@@ -83,104 +78,104 @@ const fitAddon = new FitAddon();
 let DISABLE_STARTUP = false;
 
 export default Vue.extend({
-  name: 'App',
+    name: 'App',
 
-  data() {
-    return {
-      inputBuffer: '' as string | null | undefined
-    };
-  },
-
-  head: {
-    link: [
-      {
-        rel: 'stylesheet',
-        href: '/css/xterm.css'
-      }
-    ]
-  },
-
-  beforeMount() {
-    if (sessionStorage.getItem("disableConsoleStartup") === "true") {
-      DISABLE_STARTUP = true;
-    }
-
-    if (!sessionStorage.getItem("disableConsoleStartup") || sessionStorage.getItem("disableConsoleStartup") === "false") {
-      sessionStorage.setItem("disableConsoleStartup", "true");
-    }
-  },
-
-  async mounted() {
-    const terminalElement = document.getElementById('terminal');
-
-    if (!terminalElement) {
-      console.error("Could not find terminal element.");
-      return;
-    }
-
-    term.loadAddon(fitAddon);
-    term.loadAddon(new WebLinksAddon());
-
-    term.open(terminalElement);
-
-    fitAddon.fit();
-    window.addEventListener('resize', this.onResize.bind(this));
-
-    term.write('login as: ');
-    await this.typeTextLn('guest', 0.1);
-
-    await this.sleep(1);
-
-    term.writeln('Authenticating with public key "guest@NAVID-WEB"');
-
-    await this.sleep(1);
-
-    term.writeln('\n');
-    term.writeln('Welcome to K-OS 6.1.5 LTS (K-OS/Linux 5.4.0-52-generic x86_64)');
-    term.writeln('\n');
-    term.writeln(' * Documentation: https://navidk0.dev');
-    term.writeln(' * Contact: navid.kabir@ngon.gg');
-    term.writeln(' ');
-    term.writeln('Last login: ' + new Date().toLocaleString());
-    term.writeln(' ');
-
-    await this.startTextSequence();
-
-    term.writeln(' ');
-
-    DISABLE_STARTUP = false;
-    await this.recursivelyListenForInput();
-  },
-
-  methods: {
-    async startTextSequence() {
-      await this.typeTextLn("Hey there, I'm Navid Kabir! ", 0.02);
-      await this.typeTextLn("I'm a software engineer who loves to compose music and work on video games.\n", 0.02);
-      await this.typeTextLn("Welcome to my site.", 0.02);
-
-      await this.typeTextLn('Type "help" to get started.', 0.02);
+    data() {
+        return {
+            inputBuffer: '' as string | null | undefined
+        };
     },
 
-    async recursivelyListenForInput() {
-      try {
-        const input = await localEcho.read(`${ansi.style.cyan}guest@navidk0.dev${ansi.style.reset}:~# `);
-        await this.parseCommand(input);
+    head: {
+        link: [
+            {
+                rel: 'stylesheet',
+                href: '/css/xterm.css'
+            }
+        ]
+    },
+
+    beforeMount() {
+        if (sessionStorage.getItem("disableConsoleStartup") === "true") {
+            DISABLE_STARTUP = true;
+        }
+
+        if (!sessionStorage.getItem("disableConsoleStartup") || sessionStorage.getItem("disableConsoleStartup") === "false") {
+            sessionStorage.setItem("disableConsoleStartup", "true");
+        }
+    },
+
+    async mounted() {
+        const terminalElement = document.getElementById('terminal');
+
+        if (!terminalElement) {
+            console.error("Could not find terminal element.");
+            return;
+        }
+
+        term.loadAddon(fitAddon);
+        term.loadAddon(new WebLinksAddon());
+
+        term.open(terminalElement);
+
+        fitAddon.fit();
+        window.addEventListener('resize', this.onResize.bind(this));
+
+        term.write('login as: ');
+        await this.typeTextLn('guest', 0.1);
+
+        await this.sleep(1);
+
+        term.writeln('Authenticating with public key "guest@NAVID-WEB"');
+
+        await this.sleep(1);
+
+        term.writeln('\n');
+        term.writeln('Welcome to K-OS 6.1.5 LTS (K-OS/Linux 5.4.0-52-generic x86_64)');
+        term.writeln('\n');
+        term.writeln(' * Documentation: https://navidk0.dev');
+        term.writeln(' * Contact: navid.kabir@ngon.gg');
+        term.writeln(' ');
+        term.writeln('Last login: ' + new Date().toLocaleString());
+        term.writeln(' ');
+
+        await this.startTextSequence();
+
+        term.writeln(' ');
+
+        DISABLE_STARTUP = false;
         await this.recursivelyListenForInput();
-      } catch (error) {
-        console.error("An error occurred while running a command.");
-      }
     },
 
-    async parseCommand(cmd: string) {
-      const args = cmd.split(" ");
+    methods: {
+        async startTextSequence() {
+            await this.typeTextLn("Hey there, I'm Navid Kabir! ", 0.02);
+            await this.typeTextLn("I'm a software engineer who loves to compose music and work on video games.\n", 0.02);
+            await this.typeTextLn("Welcome to my site.", 0.02);
 
-      switch (args[0].toLowerCase()) {
-        case "help":
-          this.printHelpText();
-          return;
+            await this.typeTextLn('Type "help" to get started.', 0.02);
+        },
 
-        case "about":
-          term.writeln(`
+        async recursivelyListenForInput() {
+            try {
+                const input = await localEcho.read(`${ansi.style.cyan}guest@navidk0.dev${ansi.style.reset}:~# `);
+                await this.parseCommand(input);
+                await this.recursivelyListenForInput();
+            } catch (error) {
+                console.error("An error occurred while running a command.");
+            }
+        },
+
+        async parseCommand(cmd: string) {
+            const args = cmd.split(" ");
+
+            switch (args[0].toLowerCase()) {
+                case "help":
+                    this.printHelpText();
+                    return;
+
+                case "about":
+                    term.writeln(`
 I love everything to do with programming, music, and game development!
 I'm currently working on video games over at Last Abyss, which has been my passion for quite some time.
 I believe that games are the ultimate art form since they combine so many different types of media, so I've been wanting to make my own games for as long as I can remember.
@@ -190,129 +185,129 @@ I also like to make music on the side occasionally, which stems from playing mus
 Overall, I'm just somebody who likes to make things.
 There really isn't that much else to say!
 `);
-          return;
+                    return;
 
-        case "echo": {
-          const copy = [...args];
-          copy.shift();
+                case "echo": {
+                    const copy = [...args];
+                    copy.shift();
 
-          term.writeln(copy.join(" "));
-          return;
-        }
+                    term.writeln(copy.join(" "));
+                    return;
+                }
 
-        case "clear": {
-          term.write(ansi.erase.display(2));
-          term.clear();
-          return;
-        }
+                case "clear": {
+                    term.write(ansi.erase.display(2));
+                    term.clear();
+                    return;
+                }
 
-        case "ls":
-          term.writeln(ansi.style.blue + "memes  coffee  huginn  nf  spacepulse  chronoflux  deadgames extremely_top_secret_documents");
-          return;
-        case "cd":
-          term.writeln("Yeah... no, sorry. I wasn't actually going to program this in.\nI hope the illusion isn't completely shattered.");
-          return;
+                case "ls":
+                    term.writeln(ansi.style.blue + "memes  coffee  huginn  nf  spacepulse  chronoflux  deadgames extremely_top_secret_documents");
+                    return;
+                case "cd":
+                    term.writeln("Yeah... no, sorry. I wasn't actually going to program this in.\nI hope the illusion isn't completely shattered.");
+                    return;
 
-        case "mkdir":
-        case "rm":
-          term.writeln("You think you have permission for that? Hah, no.\n");
-          return;
+                case "mkdir":
+                case "rm":
+                    term.writeln("You think you have permission for that? Hah, no.\n");
+                    return;
 
-        case "contact":
-          term.writeln("Opening your mail client...");
-          window.open("mailto:navidkabir@ngon.gg?subject=Contact%20-%20navidk0.dev&body=I%20got%20somethin'%20to%20say%20to%20ya!");
-          return;
+                case "contact":
+                    term.writeln("Opening your mail client...");
+                    window.open("mailto:navidkabir@ngon.gg?subject=Contact%20-%20navidk0.dev&body=I%20got%20somethin'%20to%20say%20to%20ya!");
+                    return;
 
-        case "roto roto":
-        case "roto":
-        case "rotoscape":
-          await this.typeTextLn("Hell YEAH! Proud of this one! 🚀", 0.025);
-          await this.sleep(1);
-          window.open("https://store.steampowered.com/app/663940/Rotoscape/");
-          return;
+                case "roto roto":
+                case "roto":
+                case "rotoscape":
+                    await this.typeTextLn("Hell YEAH! Proud of this one! 🚀", 0.025);
+                    await this.sleep(1);
+                    window.open("https://store.steampowered.com/app/663940/Rotoscape/");
+                    return;
 
-        case "spacepulse":
-        case "sp":
-          term.writeln("Ah... sorry. This one is probably dead. 😔");
-          return;
+                case "spacepulse":
+                case "sp":
+                    term.writeln("Ah... sorry. This one is probably dead. 😔");
+                    return;
 
-        case "exigence":
-        case "chronoflux":
-          term.writeln("Sorry Kevin, but it's beyond dead.");
-          return;
+                case "exigence":
+                case "chronoflux":
+                    term.writeln("Sorry Kevin, but it's beyond dead.");
+                    return;
 
-        case "ngon":
-          window.open("https://ngon.gg");
-          return;
+                case "ngon":
+                    window.open("https://ngon.gg");
+                    return;
 
-        case "discord":
-          window.open("https://discord.gg/MXNDFt59gB");
-          return;
+                case "discord":
+                    window.open("https://discord.gg/MXNDFt59gB");
+                    return;
 
-        case "twitter":
-          window.open("https://twitter.com/NavidK0");
-          return;
+                case "twitter":
+                    window.open("https://twitter.com/NavidK0");
+                    return;
 
-        case "github":
-          window.open("https://github.com/NavidK0");
-          return;
+                case "github":
+                    window.open("https://github.com/NavidK0");
+                    return;
 
-        case "soundcloud":
-        case "sc":
-          window.open("https://soundcloud.com/navidk0");
-          return;
+                case "soundcloud":
+                case "sc":
+                    window.open("https://soundcloud.com/navidk0");
+                    return;
 
-        case "youtube":
-        case "yt":
-          window.open("https://www.youtube.com/channel/UCcdPMZe5RvjzTVzZs_zmmVQ");
-          return;
+                case "youtube":
+                case "yt":
+                    window.open("https://www.youtube.com/channel/UCcdPMZe5RvjzTVzZs_zmmVQ");
+                    return;
 
-        case "instagram":
-          window.open("https://www.instagram.com/navidk0/");
-          return;
+                case "instagram":
+                    window.open("https://www.instagram.com/navidk0/");
+                    return;
 
-        case "ping":
-          term.writeln("Pong!");
-          return;
+                case "ping":
+                    term.writeln("Pong!");
+                    return;
 
-        case "pong":
-          term.writeln("Ping!");
-          return;
+                case "pong":
+                    term.writeln("Ping!");
+                    return;
 
-        case "navidk0":
-        case "navid":
-        case "kabir":
-          await this.typeTextLn("That's me! 😅", 0.025, 0.025);
-          await this.sleep(1);
-          return;
+                case "navidk0":
+                case "navid":
+                case "kabir":
+                    await this.typeTextLn("That's me! 😅", 0.025, 0.025);
+                    await this.sleep(1);
+                    return;
 
-        case "0kdivan":
-        case "divan":
-        case "ribak":
-          await this.typeTextLn("🤔  !em s'tahT", 0.025, 0.025);
-          await this.sleep(1);
-          return;
+                case "0kdivan":
+                case "divan":
+                case "ribak":
+                    await this.typeTextLn("🤔  !em s'tahT", 0.025, 0.025);
+                    await this.sleep(1);
+                    return;
 
-        case "nk0":
-        case "/nk0":
-          await this.typeTextLn("You found a secret...?!?!!", 0.05, 0.05);
-          await this.sleep(2);
-          window.open("https://soundcloud.com/navidk0/roto-baws-tress/s-jJReDBCJI1n");
+                case "nk0":
+                case "/nk0":
+                    await this.typeTextLn("You found a secret...?!?!!", 0.05, 0.05);
+                    await this.sleep(2);
+                    window.open("https://soundcloud.com/navidk0/roto-baws-tress/s-jJReDBCJI1n");
 
-          return;
+                    return;
 
-        case "":
-        case null:
-        case undefined:
-          return;
+                case "":
+                case null:
+                case undefined:
+                    return;
 
-        default:
-          term.writeln(cmd + ": command not found");
-      }
-    },
+                default:
+                    term.writeln(cmd + ": command not found");
+            }
+        },
 
-    printHelpText() {
-      const text = `K-OS bash, version 1.0.0.1(1)-release (x86_64-pc-linux-k0)
+        printHelpText() {
+            const text = `K-OS bash, version 1.0.0.1(1)-release (x86_64-pc-linux-k0)
 These shell commands are defined internally. Type 'help' to see this list.
 Don't bother typing 'help name', you won't get any extra info.
 There may or may not be commands that are not listed here nor documented.
@@ -350,55 +345,55 @@ instagram: Open up my Instagram profile.
 ping: Pong!
 pong: Ping!
 `;
-      term.writeln(text);
-    },
+            term.writeln(text);
+        },
 
-    /**
-     * Type text like a typewriter.
-     * @param text
-     * @param charPause
-     * @param punctPause
-     */
-    async typeText(text: string, charPause: number = 0.02, punctPause?: number) {
-      if (punctPause === undefined) {
-        punctPause = charPause + 0.4;
-      }
+        /**
+         * Type text like a typewriter.
+         * @param text
+         * @param charPause
+         * @param punctPause
+         */
+        async typeText(text: string, charPause: number = 0.02, punctPause?: number) {
+            if (punctPause === undefined) {
+                punctPause = charPause + 0.4;
+            }
 
-      for (let i = 0; i < text.length; i++) {
-        const char = text.charAt(i);
+            for (let i = 0; i < text.length; i++) {
+                const char = text.charAt(i);
 
-        term.write(char);
+                term.write(char);
 
-        if (!char.match(/^[.,:!?]/)) {
-          await this.sleep(charPause);
-        } else {
-          await this.sleep(punctPause);
+                if (!char.match(/^[.,:!?]/)) {
+                    await this.sleep(charPause);
+                } else {
+                    await this.sleep(punctPause);
+                }
+            }
+        },
+
+        /**
+         * Type text like a typewriter.
+         * @param text
+         * @param charPause
+         * @param punctPause
+         */
+        async typeTextLn(text: string, charPause: number = 0.02, punctPause?: number) {
+            await this.typeText(text, charPause, punctPause);
+            term.write('\n');
+        },
+
+        sleep(seconds: number) {
+            if (DISABLE_STARTUP) {
+                return Promise.resolve();
+            }
+            return new Promise(resolve => setTimeout(resolve, seconds * 1000));
+        },
+
+        onResize() {
+            fitAddon.fit();
         }
-      }
-    },
-
-    /**
-     * Type text like a typewriter.
-     * @param text
-     * @param charPause
-     * @param punctPause
-     */
-    async typeTextLn(text: string, charPause: number = 0.02, punctPause?: number) {
-      await this.typeText(text, charPause, punctPause);
-      term.write('\n');
-    },
-
-    sleep(seconds: number) {
-      if (DISABLE_STARTUP) {
-        return Promise.resolve();
-      }
-      return new Promise(resolve => setTimeout(resolve, seconds * 1000));
-    },
-
-    onResize() {
-      fitAddon.fit();
     }
-  }
 });
 </script>
 
@@ -427,24 +422,15 @@ h1, h2, h3, h4, h5, h6, p, a {
   max-width: 890px;
 }
 
-@media screen and (orientation: landscape) {
-  #terminal {
-    margin: 0 auto;
-    max-width: 890px;
-  }
-
-  #terminal-nolandscape {
-    display: none;
-  }
+#terminal {
+  margin: 0 auto;
+  max-width: 890px;
 }
 
-@media screen and (orientation: portrait) {
-  #terminal {
-    display: none;
-  }
-
-  #terminal-nolandscape {
-    display: block;
+@media (max-width: 1300px) {
+  body {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 
