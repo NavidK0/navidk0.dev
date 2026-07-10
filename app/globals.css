@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* surfaces */
+  --color-night: #060e0e;
+  --color-surface: #0b1817;
+  --color-elevated: #122423;
+  --color-line: #1c302e;
+
+  /* text */
+  --color-ink: #e9f1f0;
+  --color-muted: #8fa3a1;
+
+  /* accents: jade is the heritage teal, evolved */
+  --color-jade: #12d9c6;
+  --color-coral: #ff7a5c;
+  --color-iris: #b98bff;
+  --color-gold: #ffcf5a;
+
+  /* type */
+  --font-display: var(--font-space), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jet), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-night);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-night);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-jade) 32%, transparent);
+    color: #ffffff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  /* Soft edge vignette over the hero canvas: clear in the middle so the shapes
+     read, gently darkening toward the edges to frame the text. */
+  .hero-veil {
+    background: radial-gradient(
+      115% 115% at 50% 38%,
+      transparent 52%,
+      color-mix(in oklab, var(--color-night) 82%, transparent) 100%
+    );
+  }
+}

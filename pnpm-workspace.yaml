@@ -1,0 +1,10 @@
+# Build-script approvals. pnpm 11 replaced the v10 array settings
+# (onlyBuiltDependencies / ignoredBuiltDependencies) with `allowBuilds`,
+# a map of package -> boolean. Neither native build is needed here:
+# no next/image -> sharp is unused; unrs-resolver only affects ESLint import
+# resolution. Marking them decided (false), plus strictDepBuilds: false as a
+# guard, keeps `pnpm install` at exit 0, which Next 16's dep check requires.
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
+strictDepBuilds: false
