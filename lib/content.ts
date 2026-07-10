@@ -76,17 +76,3 @@ export const nav = [
   { label: "words", href: "#words" },
   { label: "about", href: "#about" },
 ];
-
-export type Note = {
-  date: string;
-  title: string;
-  body: string;
-};
-
-export const notes: Note[] = [
-  {
-    date: "2026.07",
-    title: "Fresh Prints is almost here",
-    body: "Heads-down finishing Fresh Prints, my 'AI or not?' social game. It's the closest to done any game of mine has been in a long time. freshprints.gg when it's ready.",
-  },
-];

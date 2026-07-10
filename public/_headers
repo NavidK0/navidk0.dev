@@ -1,0 +1,5 @@
+# The generated OG image (app/opengraph-image) is served at /opengraph-image
+# with no file extension, so pin its content type for Cloudflare Pages.
+# Path matching ignores the query string.
+/opengraph-image
+  Content-Type: image/png
