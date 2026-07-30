@@ -3,13 +3,11 @@ import Reveal from "./Reveal";
 
 export default function Section({
   id,
-  index,
   eyebrow,
   title,
   children,
 }: {
   id: string;
-  index: string;
   eyebrow: string;
   title: string;
   children: ReactNode;
@@ -17,8 +15,8 @@ export default function Section({
   return (
     <section id={id} className="mx-auto max-w-5xl scroll-mt-24 px-6 py-24 sm:py-32">
       <Reveal>
-        <div className="flex items-baseline gap-4">
-          <span className="font-mono text-xs text-jade">{index}</span>
+        <div className="flex items-baseline gap-3">
+          <span aria-hidden className="h-px w-6 shrink-0 bg-jade" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
             {eyebrow}
           </span>

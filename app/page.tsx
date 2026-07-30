@@ -13,16 +13,16 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Section id="work" index="01" eyebrow="things I've made" title="Work">
+        <Section id="work" eyebrow="things I've made" title="Work">
           <WorkSection />
         </Section>
-        <Section id="sound" index="02" eyebrow="things in my head" title="Sound">
+        <Section id="sound" eyebrow="things in my head" title="Sound">
           <SoundSection />
         </Section>
-        <Section id="words" index="03" eyebrow="things I'm figuring out" title="Words">
+        <Section id="words" eyebrow="things I'm figuring out" title="Words">
           <WordsSection />
         </Section>
-        <Section id="about" index="04" eyebrow="the person behind it" title="About">
+        <Section id="about" eyebrow="the person behind it" title="About">
           <AboutSection />
         </Section>
       </main>

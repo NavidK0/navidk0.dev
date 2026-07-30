@@ -32,8 +32,12 @@ export const metadata: Metadata = {
     "game developer",
     "software engineer",
     "composer",
-    "Rotoscape",
     "N-GON Interactive",
+    "Fresh Prints",
+    "Rotoscape",
+    "Space Pulse",
+    "Nords and Fjords",
+    "Tableside",
   ],
   authors: [{ name: "Navid Kabir" }],
   openGraph: {

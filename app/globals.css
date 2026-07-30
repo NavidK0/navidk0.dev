@@ -17,6 +17,9 @@
   --color-coral: #ff7a5c;
   --color-iris: #b98bff;
   --color-gold: #ffcf5a;
+  /* warm neutral for the archive cards, so they read as set apart rather than
+     as another hue competing with the four above */
+  --color-bone: #cfc3b0;
 
   /* type */
   --font-display: var(--font-space), ui-sans-serif, system-ui, sans-serif;

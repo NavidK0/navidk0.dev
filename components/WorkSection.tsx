@@ -6,6 +6,7 @@ const accentText: Record<Game["accent"], string> = {
   coral: "text-coral",
   violet: "text-iris",
   gold: "text-gold",
+  bone: "text-bone",
 };
 
 const accentBorder: Record<Game["accent"], string> = {
@@ -13,12 +14,17 @@ const accentBorder: Record<Game["accent"], string> = {
   coral: "hover:border-coral/40",
   violet: "hover:border-iris/40",
   gold: "hover:border-gold/40",
+  bone: "hover:border-bone/40",
 };
 
+// Green means you can go use it right now, warm means it is being worked on,
+// muted means it is over. Nothing here may read brighter than the studio does.
 const statusText: Record<Game["status"], string> = {
   Live: "text-jade",
-  Revived: "text-coral",
+  Released: "text-jade",
   "Coming soon": "text-gold",
+  "In development": "text-coral",
+  Archived: "text-muted",
   "Rest in peace": "text-muted",
 };
 
@@ -44,11 +50,18 @@ export default function WorkSection() {
             <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
               {game.blurb}
             </p>
-            {game.href && (
-              <span className="mt-6 inline-flex items-center gap-1 font-mono text-xs text-muted group-hover:text-ink">
-                open
-                <span className="transition-transform group-hover:translate-x-0.5">→</span>
-              </span>
+            {(game.when || game.href) && (
+              <div className="mt-6 flex items-center justify-between gap-3 font-mono text-xs text-muted">
+                <span>{game.when}</span>
+                {game.href && (
+                  <span className="inline-flex items-center gap-1 group-hover:text-ink">
+                    open
+                    <span className="transition-transform group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </span>
+                )}
+              </div>
             )}
           </>
         );
