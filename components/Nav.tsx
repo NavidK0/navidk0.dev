@@ -5,7 +5,7 @@ export default function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="#top" className="font-display text-lg font-bold tracking-tight text-ink">
-          navid<span className="text-jade">.</span>
+          navidk0<span className="text-jade">.</span>dev
         </a>
         <ul className="flex items-center gap-1">
           {nav.map((item) => (

@@ -102,6 +102,98 @@ export const games: Game[] = [
   },
 ];
 
+/**
+ * Open source work, rendered as a dense list rather than cards so it reads as
+ * supporting evidence and does not compete with the games above.
+ *
+ * Deliberately no stars, forks, or any popularity figure: several of these are
+ * used inside other companies and that usage is not ours to advertise.
+ */
+export type Repo = {
+  name: string;
+  blurb: string;
+  lang: "C#" | "Java" | "TypeScript";
+  href: string;
+  archived?: boolean;
+};
+
+export const repos: Repo[] = [
+  {
+    name: "SimpleGraphQL for Unity",
+    blurb:
+      "GraphQL client for Unity. Queries, mutations, and subscriptions, in code or from .graphql files.",
+    lang: "C#",
+    href: "https://github.com/NavidK0/SimpleGraphQL-For-Unity",
+    archived: true,
+  },
+  {
+    name: "Unity VFX Graph (built-in)",
+    blurb:
+      "Unity's VFX Graph, pinned and backported so it kept working on the built-in pipeline after Unity dropped it.",
+    lang: "C#",
+    href: "https://github.com/NavidK0/unity-visualeffectgraph-builtin",
+    archived: true,
+  },
+  {
+    name: "Carbon",
+    blurb:
+      "Co-wrote a Spigot plugin that backported 1.8 blocks, mobs, and world gen onto protocol hacked 1.7.10 servers.",
+    lang: "Java",
+    href: "https://github.com/NavidK0/Carbon",
+    archived: true,
+  },
+  {
+    name: "VectorForce",
+    blurb:
+      "A Minecraft racing minigame that stitched procedurally generated tracks from WorldEdit schematics. Held together with hacks.",
+    lang: "Java",
+    href: "https://github.com/NavidK0/VectorForce-MC",
+    archived: true,
+  },
+  {
+    name: "Fish's Grand Adventure",
+    blurb:
+      "Lethal Company mod for my friend group. Every moon rolls a random event. Some good, some awful.",
+    lang: "C#",
+    href: "https://github.com/NavidK0/FishsGrandAdventure",
+  },
+  {
+    name: "Clippy",
+    blurb:
+      "Fork of a fork of clippy.js. Puts Clippy, Merlin, and Bonzi on any webpage, sounds included.",
+    lang: "TypeScript",
+    href: "https://github.com/NavidK0/clippy",
+  },
+  {
+    name: "Comrade Pet Blocker",
+    blurb:
+      "Discord bot that matches uploads and custom emoji against a banned folder, then deletes them. Mostly pets.",
+    lang: "TypeScript",
+    href: "https://github.com/NavidK0/comrade-pet-blocker",
+  },
+  {
+    name: "ProdScript",
+    blurb:
+      "A landing page for a fake startup that connects your LLM to prod over SFTP. No staging.",
+    lang: "TypeScript",
+    href: "https://github.com/NavidK0/prodscript",
+  },
+  {
+    name: "binpacking",
+    blurb:
+      "Fork of binpackingjs, rewritten in TypeScript. Fits boxes into containers, 2D and 3D.",
+    lang: "TypeScript",
+    href: "https://github.com/NavidK0/binpacking",
+  },
+  {
+    name: "nx-aws",
+    blurb:
+      "Fork of bojanbass/nx-aws. Nx remote build cache backed by an S3 bucket.",
+    lang: "TypeScript",
+    href: "https://github.com/NavidK0/nx-aws",
+  },
+];
+
 export type Social = {
   label: string;
   href: string;
@@ -119,6 +211,7 @@ export const socials: Social[] = [
 
 export const nav = [
   { label: "work", href: "#work" },
+  { label: "code", href: "#code" },
   { label: "sound", href: "#sound" },
   { label: "words", href: "#words" },
   { label: "about", href: "#about" },
