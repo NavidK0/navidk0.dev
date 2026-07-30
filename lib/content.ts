@@ -86,7 +86,7 @@ export const games: Game[] = [
   {
     title: "N-GON Interactive",
     blurb:
-      "My studio, and where the projects live. Small, scrappy, stubbornly independent, and no publisher, so nothing ships before it's finished. It finally has a site of its own.",
+      "My studio, and where the projects live. It exists so the creative decisions stay ours and the work gets however long it needs to be good.",
     status: "Live",
     tag: "Studio",
     href: "https://ngon.gg",
