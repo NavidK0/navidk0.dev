@@ -29,10 +29,11 @@ export const metadata: Metadata = {
   keywords: [
     "Navid Kabir",
     "NavidK0",
+    "N-GON Interactive",
+    "game studio founder",
     "game developer",
     "software engineer",
     "composer",
-    "N-GON Interactive",
     "Fresh Prints",
     "Rotoscape",
     "Space Pulse",
