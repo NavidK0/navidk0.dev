@@ -129,7 +129,7 @@ export const repos: Repo[] = [
   {
     name: "SimpleGraphQL for Unity",
     blurb:
-      "GraphQL client for Unity. Queries, mutations, and subscriptions, in code or from .graphql files.",
+      "GraphQL client for Unity. Queries, mutations, and subscriptions, in code or from .graphql files. Ended up in production at companies I never worked for.",
     lang: "C#",
     href: "https://github.com/NavidK0/SimpleGraphQL-For-Unity",
     archived: true,
