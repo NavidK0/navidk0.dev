@@ -174,7 +174,7 @@ export const repos: Repo[] = [
   {
     name: "ProdScript",
     blurb:
-      "A landing page for a fake startup that connects your LLM to prod over SFTP. No staging.",
+      "Connects your LLM straight to your production server over SFTP. No build step, no staging, no rollback.",
     lang: "TypeScript",
     href: "https://github.com/NavidK0/prodscript",
   },
