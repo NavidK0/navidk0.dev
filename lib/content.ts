@@ -1,7 +1,7 @@
 export const profile = {
   name: "Navid Kabir",
   handle: "navidk0",
-  role: "Software engineer · game dev · composer",
+  role: "Co-founder & CEO at N-GON · engineer · composer",
   tagline: "Code, music, and video games are the key to something.",
   blurb:
     "I build things that feel alive: shipping games, composing music, and writing software. Some of it survives, some of it doesn't. Mostly, I just love making things.",
@@ -184,13 +184,6 @@ export const repos: Repo[] = [
       "Fork of binpackingjs, rewritten in TypeScript. Fits boxes into containers, 2D and 3D.",
     lang: "TypeScript",
     href: "https://github.com/NavidK0/binpacking",
-  },
-  {
-    name: "nx-aws",
-    blurb:
-      "Fork of bojanbass/nx-aws. Nx remote build cache backed by an S3 bucket.",
-    lang: "TypeScript",
-    href: "https://github.com/NavidK0/nx-aws",
   },
 ];
 

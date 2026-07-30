@@ -5,7 +5,10 @@ export default function SoundSection() {
     <Reveal className="flex flex-col gap-6">
       <p className="max-w-2xl text-lg leading-relaxed text-muted">
         I&apos;ve been making music about as long as I&apos;ve been making games,
-        from band-room beginnings to whatever this is now. Here&apos;s the latest.
+        and the two stopped being separate a long time ago. I write the
+        soundtracks when there&apos;s time and direct them when there isn&apos;t,
+        and a good half of Space Pulse exists because I wanted something on
+        screen moving in time with one. Here&apos;s the latest.
       </p>
       <div className="overflow-hidden rounded-2xl border border-line bg-surface/60">
         <iframe

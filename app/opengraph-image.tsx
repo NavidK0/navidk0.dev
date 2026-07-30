@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { profile } from "@/lib/content";
 
 // Generate the image at build time (required under `output: export`).
 export const dynamic = "force-static";
@@ -39,7 +40,7 @@ export default function OpengraphImage() {
           <span>Kabir</span>
         </div>
         <div style={{ display: "flex", fontSize: 38, color: "#8fa3a1", marginTop: 24 }}>
-          Code, music, and video games are the key to something.
+          {profile.tagline}
         </div>
         <div
           style={{
@@ -60,7 +61,7 @@ export default function OpengraphImage() {
             fontFamily: "monospace",
           }}
         >
-          software engineer · game dev · composer
+          {profile.role}
         </div>
       </div>
     ),
