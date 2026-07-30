@@ -119,6 +119,14 @@ export type Repo = {
 
 export const repos: Repo[] = [
   {
+    name: "Carbon",
+    blurb:
+      "Lead dev. Five of us kept Minecraft SMP together through the Bukkit DMCA, backporting 1.8 onto protocol hacked 1.7.10 servers.",
+    lang: "Java",
+    href: "https://github.com/NavidK0/Carbon",
+    archived: true,
+  },
+  {
     name: "SimpleGraphQL for Unity",
     blurb:
       "GraphQL client for Unity. Queries, mutations, and subscriptions, in code or from .graphql files.",
@@ -132,14 +140,6 @@ export const repos: Repo[] = [
       "Unity's VFX Graph, pinned and backported so it kept working on the built-in pipeline after Unity dropped it.",
     lang: "C#",
     href: "https://github.com/NavidK0/unity-visualeffectgraph-builtin",
-    archived: true,
-  },
-  {
-    name: "Carbon",
-    blurb:
-      "Co-wrote a Spigot plugin that backported 1.8 blocks, mobs, and world gen onto protocol hacked 1.7.10 servers.",
-    lang: "Java",
-    href: "https://github.com/NavidK0/Carbon",
     archived: true,
   },
   {
