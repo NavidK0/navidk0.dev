@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://navidk0.dev"),
   title: "Navid Kabir: code, music & games",
   description:
-    "Navid Kabir (NavidK0), co-founder and CEO of N-GON Interactive, engineer, and composer. Games, music, writing, and the things in between.",
+    "Navid Kabir (NavidK0), co-founder and CEO of N-GON Interactive, software engineer, and composer.",
   keywords: [
     "Navid Kabir",
     "NavidK0",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Navid Kabir: code, music & games",
     description:
-      "Co-founder and CEO of N-GON Interactive, engineer, and composer. Games, music, writing, and the things in between.",
+      "Co-founder and CEO of N-GON Interactive, software engineer, and composer.",
     url: "https://navidk0.dev",
     siteName: "navidk0.dev",
     type: "website",

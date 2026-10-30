@@ -26,13 +26,13 @@ export default function Hero() {
             href="#work"
             className="rounded-full bg-jade px-6 py-3 text-sm font-semibold text-night transition-transform hover:scale-[1.03]"
           >
-            See the work
+            My work
           </a>
           <a
-            href="#sound"
+            href="#music"
             className="rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-jade/50 hover:text-jade"
           >
-            Hear the music
+            My music
           </a>
         </div>
       </div>

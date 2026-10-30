@@ -35,10 +35,9 @@ export default function AboutSection() {
       <Reveal delay={0.08} className="flex flex-col gap-6">
         <p className="text-lg leading-relaxed text-ink/90">{profile.blurb}</p>
         <p className="leading-relaxed text-muted">
-          Passionate about programming, music, and game development. I make video
-          games, compose music, and build the occasional company. Games are the
-          closest thing we have to an art form that thinks back, and I&apos;ve spent a
-          long time trying to make my own.
+          I co-founded N-GON Interactive, where I&apos;m the CEO. I&apos;ve always
+          seen games as the ultimate art form and wanted to make my own. I&apos;m
+          also into 3D printing, 3D modeling, and animation.
         </p>
         <div>
           <a

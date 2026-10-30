@@ -52,7 +52,7 @@ export default function CodeSection() {
           rel="noreferrer"
           className="inline-flex items-center gap-1 font-mono text-xs text-muted transition-colors hover:text-jade"
         >
-          the rest is on github
+          more on github
           <span aria-hidden>→</span>
         </a>
       </Reveal>

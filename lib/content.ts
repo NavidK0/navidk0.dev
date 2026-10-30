@@ -2,9 +2,9 @@ export const profile = {
   name: "Navid Kabir",
   handle: "navidk0",
   role: "Co-founder & CEO at N-GON · engineer · composer",
-  tagline: "Code, music, and video games are the key to something.",
+  tagline: "Code, music, video games, and creativity.",
   blurb:
-    "I build things that feel alive: shipping games, composing music, and writing software. Some of it survives, some of it doesn't. Mostly, I just love making things.",
+    "I build things that feel alive: shipping games, composing music, and writing software. Mostly, I just love making things.",
   email: "navid.kabir@ngon.gg",
 };
 
@@ -21,7 +21,7 @@ export type Game = {
   blurb: string;
   status:
     | "Live"
-    | "Released"
+      | "Released"
     | "Coming soon"
     | "In development"
     | "Archived"
@@ -37,17 +37,16 @@ export const games: Game[] = [
   {
     title: "Fresh Prints",
     blurb:
-      "Spot the AI images, then guess the exact prompt that made them. A fresh set every day. Closest to done I've been in ages, and the one I'm most excited to put in people's hands.",
-    status: "Coming soon",
+      "A daily guessing game about art and algorithms. Everyone gets the same images and video. For each one, guess whether AI or a human made it, then guess its prompt or title.",
+    status: "In development",
     tag: "iOS & Android",
-    when: "Very soon",
     href: "https://freshprints.gg",
     accent: "gold",
   },
   {
     title: "Rotoscape",
     blurb:
-      "A game about rotating shapes around yourself without letting them touch you. Reverse horseshoe. The oldest idea I have and still the one I'm proudest of, which makes it embarrassing that it isn't out yet.",
+      "A minimalist action puzzler where you rotate shapes around yourself to avoid touching them. Think of it as reverse horseshoe.",
     status: "In development",
     tag: "Steam",
     when: "TBA",
@@ -57,7 +56,7 @@ export const games: Game[] = [
   {
     title: "Space Pulse",
     blurb:
-      "Rhythmic Pong in space. BIT.TRIP Flux got into my head and never left, so I started building my own. It sat still for a long time. It's moving again.",
+      "A rhythm game set in space with retro paddle-and-beat mechanics, inspired by BIT.TRIP FLUX. It's like Rhythmic Pong in space!",
     status: "In development",
     tag: "Steam",
     when: "TBA",
@@ -66,7 +65,7 @@ export const games: Game[] = [
   {
     title: "Nords and Fjords",
     blurb:
-      "A short roguelite runner down a very long fjord, toward whatever is waiting at the end. It came out in 2018 and it looks like it came out in 2018. You can still play it.",
+      'A short "runner" roguelite where you travel down a very long fjord toward the mystery waiting at the end.',
     status: "Released",
     tag: "itch.io",
     when: "Aug 6, 2018",
@@ -76,7 +75,7 @@ export const games: Game[] = [
   {
     title: "Tableside",
     blurb:
-      "A text RPG narrated by a model instead of a person. One turn took two models at two vendors, because the one that could write a scene couldn't say what the choices in it were. We ran it fourteen months.",
+      "A text-based RPG with an AI narrator in place of a human Dungeon Master. We built it over one long weekend and kept it running for fourteen months. It wasn't viable, since the technology wasn't quite good enough yet for what we wanted.",
     status: "Archived",
     tag: "Experiment",
     when: "May 2025 to July 2026",
@@ -86,7 +85,7 @@ export const games: Game[] = [
   {
     title: "N-GON Interactive",
     blurb:
-      "The studio I co-founded, and where the projects live. It exists so the creative decisions stay ours and the work gets however long it needs to be good.",
+      "The independent game studio I co-founded. We keep creative control of our games and take the time to make them good.",
     status: "Live",
     tag: "Studio",
     href: "https://ngon.gg",
@@ -95,7 +94,7 @@ export const games: Game[] = [
   {
     title: "Exigence · Chronoflux",
     blurb:
-      "Ambitious, unfinished, and gone. Every dead project taught me something the shipped ones couldn't.",
+      "Two older projects that never got finished.",
     status: "Rest in peace",
     tag: "Archive",
     accent: "bone",
@@ -121,7 +120,7 @@ export const repos: Repo[] = [
   {
     name: "Carbon",
     blurb:
-      "Lead dev. Five of us kept Minecraft SMP together through the Bukkit DMCA, backporting 1.8 onto protocol hacked 1.7.10 servers.",
+      "I was lead dev. After the Bukkit DMCA, five of us backported 1.8 onto protocol-hacked 1.7.10 servers to keep Minecraft SMP servers running.",
     lang: "Java",
     href: "https://github.com/NavidK0/Carbon",
     archived: true,
@@ -129,7 +128,7 @@ export const repos: Repo[] = [
   {
     name: "SimpleGraphQL for Unity",
     blurb:
-      "GraphQL client for Unity. Queries, mutations, and subscriptions, in code or from .graphql files. Ended up in production at companies I never worked for.",
+      "A GraphQL client for Unity. Supports queries, mutations, and subscriptions, written in code or loaded from .graphql files. Other companies ended up using it in production.",
     lang: "C#",
     href: "https://github.com/NavidK0/SimpleGraphQL-For-Unity",
     archived: true,
@@ -137,7 +136,7 @@ export const repos: Repo[] = [
   {
     name: "Unity VFX Graph (built-in)",
     blurb:
-      "Unity's VFX Graph, pinned and backported so it kept working on the built-in pipeline after Unity dropped it.",
+      "Unity's VFX Graph, backported to keep it working on the built-in render pipeline after Unity dropped support.",
     lang: "C#",
     href: "https://github.com/NavidK0/unity-visualeffectgraph-builtin",
     archived: true,
@@ -145,7 +144,7 @@ export const repos: Repo[] = [
   {
     name: "VectorForce",
     blurb:
-      "A Minecraft racing minigame that stitched procedurally generated tracks from WorldEdit schematics. Held together with hacks.",
+      "An old Minecraft racing minigame I made around 2014. Tracks were procedurally generated from WorldEdit schematics.",
     lang: "Java",
     href: "https://github.com/NavidK0/VectorForce-MC",
     archived: true,
@@ -153,35 +152,35 @@ export const repos: Repo[] = [
   {
     name: "Fish's Grand Adventure",
     blurb:
-      "Lethal Company mod for my friend group. Every moon rolls a random event. Some good, some awful.",
+      "A private Lethal Company mod for my friend group. Every moon rolls a random event.",
     lang: "C#",
     href: "https://github.com/NavidK0/FishsGrandAdventure",
   },
   {
     name: "Clippy",
     blurb:
-      "Fork of a fork of clippy.js. Puts Clippy, Merlin, and Bonzi on any webpage, sounds included.",
+      "A fork of clippy.js that puts Clippy, Merlin, and Bonzi on any webpage, with sounds.",
     lang: "TypeScript",
     href: "https://github.com/NavidK0/clippy",
   },
   {
     name: "Comrade Pet Blocker",
     blurb:
-      "Discord bot that matches uploads and custom emoji against a banned folder, then deletes them. Mostly pets.",
+      "Discord bot that blocks dastardly unwanted images (and pets) by matching uploads and custom emoji against a banned folder.",
     lang: "TypeScript",
     href: "https://github.com/NavidK0/comrade-pet-blocker",
   },
   {
     name: "ProdScript",
     blurb:
-      "Connects your LLM straight to your production server over SFTP. No build step, no staging, no rollback.",
+      "Connects your LLM directly to your production server over SFTP. The best way to build.",
     lang: "TypeScript",
     href: "https://github.com/NavidK0/prodscript",
   },
   {
     name: "binpacking",
     blurb:
-      "Fork of binpackingjs, rewritten in TypeScript. Fits boxes into containers, 2D and 3D.",
+      "A TypeScript rewrite of binpackingjs. Packs boxes into containers in 2D and 3D.",
     lang: "TypeScript",
     href: "https://github.com/NavidK0/binpacking",
   },
@@ -205,7 +204,6 @@ export const socials: Social[] = [
 export const nav = [
   { label: "work", href: "#work" },
   { label: "code", href: "#code" },
-  { label: "sound", href: "#sound" },
-  { label: "words", href: "#words" },
+  { label: "music", href: "#music" },
   { label: "about", href: "#about" },
 ];

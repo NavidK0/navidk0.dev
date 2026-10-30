@@ -1,14 +1,12 @@
 import Reveal from "./Reveal";
 
-export default function SoundSection() {
+export default function MusicSection() {
   return (
     <Reveal className="flex flex-col gap-6">
       <p className="max-w-2xl text-lg leading-relaxed text-muted">
-        I&apos;ve been making music about as long as I&apos;ve been making games,
-        and the two stopped being separate a long time ago. I write the
-        soundtracks when there&apos;s time and direct them when there isn&apos;t,
-        and a good half of Space Pulse exists because I wanted something on
-        screen moving in time with one. Here&apos;s the latest.
+        I grew up playing instruments in school bands. Now I write and direct
+        the music for our games, and I&apos;m happiest when stuff on screen is
+        bouncing to the beat. A good half of Space Pulse exists because of that.
       </p>
       <div className="overflow-hidden rounded-2xl border border-line bg-surface/60">
         <iframe
@@ -27,7 +25,7 @@ export default function SoundSection() {
         rel="noreferrer"
         className="inline-flex items-center gap-1 self-start font-mono text-xs text-muted transition-colors hover:text-jade"
       >
-        open soundcloud
+        more on soundcloud
         <span aria-hidden>→</span>
       </a>
     </Reveal>
